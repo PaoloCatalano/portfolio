@@ -54,11 +54,10 @@
 }
 
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  opacity: 0.98;
   visibility: hidden;
 
   &.open {
@@ -83,6 +82,14 @@
     }
 
     &__item {
+      a {
+        box-shadow: $box-shadow;
+        padding: 0.2rem 0.5rem;
+        background-color: $violet;
+        margin-bottom: 1rem;
+        font-family: monospace;
+      }
+
       transform: translateX(100vw);
       @include transition-ease;
       &.open {
@@ -90,7 +97,8 @@
       }
 
       &.active > a {
-        color: $secondary-color;
+        font-weight: 600;
+        color: $cyan;
         pointer-events: none;
         cursor: normal;
       }
@@ -105,7 +113,10 @@
       @include transition-ease;
 
       &:hover {
-        color: $secondary-color;
+        color: $cyan;
+        transform: translateY(0px);
+
+        animation: bouncing 0.4s ease-in-out;
       }
     }
   }
@@ -114,5 +125,14 @@
 @for $i from 1 through 4 {
   .menu-nav__item:nth-child(#{$i}) {
     transition-delay: ($i * 0.1s) + 0.15s;
+  }
+}
+
+@keyframes bouncing {
+  50% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(2px);
   }
 }

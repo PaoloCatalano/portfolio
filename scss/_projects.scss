@@ -1,3 +1,8 @@
+.bg-projects {
+  background: $yellow;
+  border-bottom: 2px solid $black;
+}
+
 .projects {
   padding-bottom: 2rem;
 
@@ -9,7 +14,7 @@
         rgba($primary-color, 0.9),
         rgba($primary-color, 0.3)
       ),
-      url("../img/model-1.png") center top;
+      url("../img/model.png") center top;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -18,71 +23,95 @@
 
     .text-secondary {
       font-size: 2rem;
-      margin-bottom: 2rem;
+      font-weight: 700;
+      text-shadow: $text-shadow;
+      padding-bottom: 1rem;
     }
+  }
+
+  &__title {
+    background: $black;
+    text-align: center;
+    color: $white;
+    padding: 0.2rem 0 0.4rem 0;
+    font-size: 1rem;
+    font-weight: 700;
   }
 
   &__items {
     width: 60vw;
-    margin: 2rem auto 0 auto;
+    margin: 6rem auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
+
+    .bg-pic {
+      position: absolute;
+      width: 150px;
+
+      opacity: 0.5;
+
+      &__1 {
+        left: 1rem;
+        top: 45vh;
+      }
+
+      &__2 {
+        right: 1rem;
+        top: 80vh;
+      }
+
+      &__3 {
+        left: 3rem;
+        top: 140vh;
+      }
+
+      &__4 {
+        right: 2rem;
+        top: 160vh;
+      }
+    }
   }
   &__item {
     position: relative;
-    border-bottom: 5px solid $secondary-color;
     overflow: hidden;
-
+    z-index: 1;
     img {
       width: 100%;
-      background: radial-gradient(cornsilk, darkseagreen);
+      background: radial-gradient($yellow, $cyan);
     }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: $secondary-color;
-      opacity: 0;
-      @include transition-ease;
+    .alt-bg-1 {
+      background: radial-gradient($blue, $violet);
     }
-
-    &:hover {
-      &::after {
-        top: 0;
-        opacity: 0.95;
-      }
-      .projects__btn {
-        opacity: 1;
-      }
+    .alt-bg-2 {
+      background: radial-gradient($canary, $orange);
+    }
+    .alt-bg-3 {
+      background: radial-gradient($lime, $white);
     }
   }
 
   &__btns {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    background-color: $white;
+    color: $black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    transform: translateY(-4px);
   }
 
   &__btn {
     display: grid;
     place-items: center;
     font-weight: 700;
-    opacity: 0;
+    width: 100%;
+    border: 1px solid $black;
+    padding: 0.2rem 0;
     color: set-text-color($secondary-color);
     @include transition-ease;
 
     &:hover {
-      color: set-text-color(set-text-color($secondary-color));
+      background: $gray;
     }
 
     img {

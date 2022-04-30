@@ -1,3 +1,4 @@
+//medium 768
 @include media-md {
   .menu-btn {
     visibility: hidden;
@@ -24,35 +25,61 @@
     }
   }
 
+  .home__name {
+    font-size: 4rem;
+  }
+  .home__title {
+    font-size: 1.5rem;
+    width: fit-content;
+  }
+
   .about__bio {
     font-size: 1.5rem;
   }
 
+  .about__desc {
+    flex-direction: row;
+  }
+
+  .jobs__job {
+    p {
+      padding: 0 8rem 1rem;
+    }
+  }
   .projects {
     &__bio-image {
       height: 40vh;
-    }
-    &__items {
-      grid-template-columns: repeat(2, 1fr);
     }
     .text-secondary {
       font-size: 3rem;
     }
   }
 
+  .projects__title {
+    font-size: 2rem;
+  }
+
+  .contact {
+    padding-top: 60vh;
+  }
   .contact__list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+//large 1024
 @include media-lg {
   .contact__list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .projects__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+// extra large 1600
 @include media-xl {
   .projects__bio-image {
-    height: 50vh;
+    height: 70vh;
   }
 }

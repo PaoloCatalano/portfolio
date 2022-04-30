@@ -1,55 +1,181 @@
+.bg-about {
+  background: $violet;
+  border-bottom: 2px solid $black;
+}
+
 .about {
   padding-bottom: 2rem;
 
   &__bio-image {
-    height: 50vh;
+    height: 60vh;
     width: 100%;
     background: linear-gradient(
         to right,
-        rgba($primary-color, 0.9),
-        rgba($primary-color, 0.3)
+        rgba($indaco, 0.9),
+        rgba($indaco, 0.3)
       ),
-      url("../img/model-1.png") center top;
+      url("../img/model.png") center top;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
-    p {
-      margin-block-end: 2rem;
-    }
   }
 
   &__bio {
-    width: 80%;
     text-align: center;
 
     .text-secondary {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: $text-shadow;
       padding-bottom: 1rem;
     }
   }
 
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 1.7rem;
+      padding: 5rem;
+      box-shadow: $box-shadow;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 150px;
+        @include transition-ease;
+
+        // background-color: $white;
+        // clip-path: path();
+      }
+    }
+
+    p:nth-child(1) {
+      background: darken($indaco, 15%);
+      &:hover {
+        img {
+          transform: rotate(-18deg);
+        }
+      }
+    }
+    p:nth-child(2) {
+      background: $white;
+      color: $black;
+      &:hover {
+        img {
+          transform: rotate(-18deg);
+        }
+      }
+    }
+  }
+
   .jobs {
-    width: 60vw;
-    margin: 2rem auto 0 auto;
+    width: 50vw;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
+
+    .bg-pic {
+      position: absolute;
+      width: 150px;
+      transform: translateY(-15rem);
+      opacity: 0.5;
+
+      &__1 {
+        left: 2rem;
+        top: 45vh;
+      }
+
+      &__2 {
+        right: 5rem;
+        top: 80vh;
+      }
+
+      &__3 {
+        left: 3rem;
+        top: 140vh;
+      }
+
+      &__4 {
+        right: 4rem;
+        top: 160vh;
+      }
+    }
 
     &__job {
-      background: lighten($primary-color, 10%);
-      padding: 0.5rem;
-      border-bottom: 5px solid $secondary-color;
+      box-shadow: $box-shadow;
+      color: $black;
+      margin-top: 4rem;
+      position: relative;
+
+      img {
+        position: absolute;
+        @include transition-ease;
+      }
+
+      .img-top {
+        width: 80px;
+        right: 0.4rem;
+        top: 0.6rem;
+        transform: rotate(10deg);
+      }
+      &:hover .img-top {
+        transform: rotate(20deg);
+      }
+
+      .img-side {
+        width: 60px;
+        left: 1rem;
+        bottom: 1.5rem;
+      }
+      &:hover .img-side {
+        transform: translateY(-6px);
+      }
 
       h2,
       h3 {
+        padding: 0 0.5rem;
+
         margin: 0.5rem 0;
+        font-weight: 600;
+      }
+      h3 {
+        border-bottom: 2px solid $black;
+      }
+      p {
+        min-height: 140px;
+        padding: 0 2rem 1rem 6rem;
+        text-align: justify;
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    &__job:nth-child(2) {
+      background: lighten($green, 20%);
+    }
+
+    &__job:nth-child(3) {
+      background: lighten($orange, 20%);
+    }
+
+    &__job:nth-child(4) {
+      background: lighten($violet, 20%);
+
+      h2 {
+        color: $red;
       }
 
-      h6 {
-        margin: 0.3rem 0;
+      p {
+        color: $white;
       }
+      margin-bottom: 4rem;
     }
   }
 

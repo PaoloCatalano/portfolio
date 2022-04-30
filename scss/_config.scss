@@ -1,10 +1,33 @@
 $primary-color: #272727;
 $secondary-color: #ff652f;
 
+$red: hsl(0, 100, 50);
+$orange: hsl(32, 100, 50);
+$yellow: hsl(50, 100, 50);
+$canary: hsl(68, 100, 52);
+$lime: hsl(83, 100, 52);
+$green: hsl(155, 100, 52);
+$cyan: hsl(184, 100, 52);
+$blue: hsl(212, 92, 52);
+$indaco: hsl(259, 100, 52);
+$violet: hsl(284, 100, 52);
+$black: #000;
+$white: #fff;
+$gray: #959392;
+
+$text-shadow: -1px -1px 0 $black, 1px 1px 0 $black, 1px -1px 0 $black,
+  -1px 1px 0 $black;
+$box-shadow: 0px 0px 0px 3px $black;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background: transparent;
+  color: $orange;
 }
 
 @mixin transition-ease {
