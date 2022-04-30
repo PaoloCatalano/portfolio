@@ -386,17 +386,17 @@
 }
 
 .about .jobs .bg-pic__2 {
-  right: 5rem;
+  right: 2rem;
   top: 80vh;
 }
 
 .about .jobs .bg-pic__3 {
-  left: 3rem;
+  left: 2rem;
   top: 140vh;
 }
 
 .about .jobs .bg-pic__4 {
-  right: 4rem;
+  right: 3rem;
   top: 160vh;
 }
 
@@ -412,6 +412,7 @@
   position: absolute;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  opacity: 0.9;
 }
 
 .about .jobs__job .img-top {
@@ -440,9 +441,11 @@
 
 .about .jobs__job h2,
 .about .jobs__job h3 {
+  position: relative;
   padding: 0 0.5rem;
   margin: 0.5rem 0;
   font-weight: 600;
+  z-index: 1;
 }
 
 .about .jobs__job h3 {
@@ -456,6 +459,7 @@
   display: -ms-grid;
   display: grid;
   place-items: center;
+  z-index: 1;
 }
 
 .about .jobs__job:nth-child(2) {
