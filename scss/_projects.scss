@@ -120,6 +120,10 @@
       background: transparent;
     }
   }
+  &__disabled {
+    cursor: not-allowed;
+    background: grey;
+  }
 }
 
 .social-icons {
